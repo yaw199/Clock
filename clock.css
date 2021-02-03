@@ -1,0 +1,262 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Gotham Rounded, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.clock-container {
+  width: 460px;
+  height: 460px;
+  background-color: #252525;
+  border: 20px solid #dddddd;
+  border-radius: 50%;
+  color: #fff;
+  box-shadow: inset 15px 15px 15px 2px rgba(34, 40, 49, 1),
+    inset -15px -15px 15px 2px rgba(34, 40, 49, 1);
+  position: relative;
+}
+
+.clock-container::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+
+  background: linear-gradient(100deg, #db6400, #fff, #16697a, #ffd369);
+  z-index: 50;
+}
+
+.number-container {
+  color: #ffd369;
+  font-size: 1.8rem;
+  font-weight: 800;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.number::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 13px;
+  border-bottom-right-radius: 4px;
+  background: linear-gradient(5deg, #16697a 70%, #ffd369 30%);
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  padding: 10px;
+}
+
+.number.num-1 {
+  transform: rotate(30deg);
+}
+.num-1 div {
+  transform: rotate(-30deg);
+}
+
+.number.num-2 {
+  transform: rotate(60deg);
+}
+.num-2 div {
+  transform: rotate(-60deg);
+}
+.number.num-3 {
+  transform: rotate(90deg);
+}
+.num-3 div {
+  transform: rotate(-90deg);
+}
+.number.num-4 {
+  transform: rotate(120deg);
+}
+
+.num-4 div {
+  transform: rotate(-120deg);
+}
+.number.num-5 {
+  transform: rotate(150deg);
+}
+.num-5 div {
+  transform: rotate(-150deg);
+}
+.number.num-6 {
+  transform: rotate(180deg);
+}
+.num-6 div {
+  transform: rotate(-180deg);
+}
+.number.num-7 {
+  transform: rotate(210deg);
+}
+.num-7 div {
+  transform: rotate(-210deg);
+}
+.number.num-8 {
+  transform: rotate(240deg);
+}
+.num-8 div {
+  transform: rotate(-240deg);
+}
+.number.num-9 {
+  transform: rotate(270deg);
+}
+.num-9 div {
+  transform: rotate(-270deg);
+}
+.number.num-10 {
+  transform: rotate(300deg);
+}
+.num-10 div {
+  transform: rotate(-300deg);
+}
+
+.number.num-11 {
+  transform: rotate(330deg);
+}
+.num-11 div {
+  transform: rotate(-330deg);
+}
+.number.num-12 {
+  transform: rotate(360deg);
+}
+
+/* HANDS-CONTAINER */
+.hands-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+}
+.hour {
+  width: 6px;
+  height: 60px;
+  background-color: #fff;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  z-index: 12;
+}
+.minute {
+  width: 4px;
+  height: 90px;
+  background-color: #db6400;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  z-index: 12;
+}
+.seconds {
+  width: 2px;
+  height: 150px;
+  background-color: #16697a;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  transform: translateX(-50%);
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  z-index: 12;
+}
+
+.seconds {
+  transform: rotate(2deg);
+}
+
+/* Digital Clock */
+.digital-clock {
+  width: 140px;
+  height: 45px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 23%;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.3);
+  color: black;
+  border-radius: 5px;
+  border: 0.5px solid transparent;
+}
+
+/* ANIMATION */
+.digital-clock::after,
+.digital-clock::before {
+  content: "";
+  width: calc(100% + 3px);
+  height: calc(100% + 3px);
+  background: linear-gradient(100deg, #db6400, #fff, #16697a, #ffd369);
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  background-size: 200%;
+  border-radius: 5px;
+  border: 0.5px solid transparent;
+  animation: displayColors 10s linear infinite;
+}
+
+@keyframes displayColors {
+  0% {
+    background-position: 0 0;
+  }
+
+  25% {
+    background-position: 50%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  75% {
+    background-position: 200%;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.digital-clock::after {
+  filter: blur(10px);
+}
+/* ANIMATION ENDS */
+
+.date-string,
+.time-display {
+  width: 100%;
+  padding: 2px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.date-string {
+  border-bottom: 1px solid black;
+}
