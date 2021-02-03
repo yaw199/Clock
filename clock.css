@@ -290,4 +290,9 @@ h5 {
     left: 50%;
     transform: translateX(-50%);
   }
+  
+  .date-string,
+  .time-display {
+    padding-bottom: 0;
+  }
 }
