@@ -23,7 +23,7 @@ setInterval(digitaClock,100);
      secondsTick.style.transform = "rotate(" + (secondsTime*360) + "deg)";
  
      if( minuteTick.style.transform === "rotate(" + (minuteTime * 360) + "deg)"){
-     let soundTick = new Audio("clockTicking.mp3")
+     let soundTick = new Audio("audio/clockTicking.mp3")
          soundTick.play();
      }    
     
