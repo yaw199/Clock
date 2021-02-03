@@ -3,7 +3,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: Gotham Rounded, sans-serif;
-  overflow:hidden;
+  overflow: hidden;
 }
 
 body {
@@ -280,6 +280,7 @@ h5 {
 @media (max-width: 600px) {
   .clock-container {
     width: 340px;
+
     height: 340px;
     border: 10px solid #dddddd;
   }
@@ -287,12 +288,13 @@ h5 {
   .digital-clock {
     position: absolute;
     bottom: 24%;
+    height: 46px;
     left: 50%;
     transform: translateX(-50%);
   }
-  
+
   .date-string,
   .time-display {
-    padding-bottom: 0;
+    padding-bottom: 0px;
   }
 }
