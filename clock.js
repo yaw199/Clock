@@ -5,6 +5,7 @@ const minuteTick = document.querySelector(".minute");
 const secondsTick = document.querySelector(".seconds");
 const dateString = document.querySelector(".date-string");
 const timeDisplay = document.querySelector(".time-display");
+const pauseSound = document.querySelector(".copy-right")
 // Date constructor for Time//
 setInterval(clockTick, 1000);
 setInterval(digitaClock,100);
@@ -20,13 +21,23 @@ setInterval(digitaClock,100);
      hourTick.style.transform = "rotate(" + (hourTime * 360) + "deg)";
      minuteTick.style.transform = "rotate(" + (minuteTime * 360) + "deg)";
      secondsTick.style.transform = "rotate(" + (secondsTime*360) + "deg)";
- }
+ 
+     if( minuteTick.style.transform === "rotate(" + (minuteTime * 360) + "deg)"){
+     let soundTick = new Audio("clockTicking.mp3")
+         soundTick.play();
+     }    
+    
+
+    }
+
+
 
 
  function digitaClock(){
      let currentDate = new Date();
      let time = currentDate.toLocaleString('en-US', {hour:"numeric", minute:"numeric", hour12:true})
      let date = currentDate.toDateString();
+     
 
      dateString.innerText=date;
      timeDisplay.innerText = time;

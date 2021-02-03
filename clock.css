@@ -269,6 +269,7 @@ body {
   top: 30%;
   left: 50%;
   transform: translateX(-50%);
+  cursor: pointer;
 }
 
 h5 {
@@ -280,7 +281,6 @@ h5 {
 @media (max-width: 600px) {
   .clock-container {
     width: 340px;
-
     height: 340px;
     border: 10px solid #dddddd;
   }
