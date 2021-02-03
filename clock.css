@@ -278,8 +278,15 @@ h5 {
 /* MEDIA QUERY */
 @media (max-width: 600px) {
   .clock-container {
-    width: 360px;
-    height: 360px;
+    width: 340px;
+    height: 340px;
     border: 10px solid #dddddd;
+  }
+
+  .digital-clock {
+    position: absolute;
+    bottom: 24%;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
