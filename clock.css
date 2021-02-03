@@ -196,7 +196,7 @@ body {
 
 /* Digital Clock */
 .digital-clock {
-  width: 140px;
+  width: 150px;
   height: 45px;
   background-color: transparent;
   position: absolute;
@@ -259,4 +259,27 @@ body {
 
 .date-string {
   border-bottom: 1px solid black;
+}
+
+/* CopyRight */
+.copy-right {
+  height: 30px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+h5 {
+  font-family: "Recursive", sans-serif;
+  font-size: 0.9rem;
+}
+
+/* MEDIA QUERY */
+@media (max-width: 600px) {
+  .clock-container {
+    width: 360px;
+    height: 360px;
+    border: 10px solid #dddddd;
+  }
 }
